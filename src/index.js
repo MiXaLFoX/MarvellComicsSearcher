@@ -1,4 +1,6 @@
 
+import './style.css';
+
 class View {
   constructor(selector, tagName, idName, className) {
     this.selector = document.querySelector(selector);
@@ -29,4 +31,13 @@ class View {
   }
 }
 
-const menuContainer = new View('body', 'ul', 'nav', 'menu');
+class AppView extends View {
+  constructor (selector, tagName, idName, className) {
+    super (selector, tagName, idName, className);
+
+  }
+
+}
+
+const wrapper = new AppView('body', 'div', 'app', 'menu--wrapper');
+const menuContainer = new AppView('wrapper', 'ul', 'nav', 'menu');

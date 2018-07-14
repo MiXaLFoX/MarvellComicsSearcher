@@ -2,6 +2,11 @@
   font-size: 3em;
   color: blue;
 }
-.menu{
+.menu--wrapper ul{
+  list-style: none;
   background-color: #255C95;
+}
+.menu--wrapper li{
+  display: inline-block;
+  font-size: 3em;
 }
