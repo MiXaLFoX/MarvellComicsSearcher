@@ -2,11 +2,18 @@
   font-size: 3em;
   color: blue;
 }
-.menu--wrapper ul{
+.menu__wrapper ul{
   list-style: none;
-  background-color: #255C95;
+
 }
-.menu--wrapper li{
-  display: inline-block;
-  font-size: 3em;
+.wrapper{
+  width: 100%;
+  font-size: 1em;
+  background-color: #255C95;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.search__input{
+  width: 70%;
 }
