@@ -1,6 +1,6 @@
 import View from '../core/View.js';
 
-export class SearchView extends View {
+export default class SearchView extends View {
   constructor(options, additionalOptions) {
     super(options);
     options = Object.assign(additionalOptions, options);
@@ -19,7 +19,7 @@ export class SearchView extends View {
   }
 
   render() {
-    document.querySelector(this.selector).appendChild(this._createElement());
+    document.querySelector(this.selector).appendChild(this.element);
   }
 
   setTypeToSearch(prop, value) {
@@ -27,16 +27,7 @@ export class SearchView extends View {
   }
 }
 
-const search = new SearchView({
-    selector: '#app',
-    tagName: 'input',
-    idName: 'search',
-    className: 'search__input'
-  },
-  {
-    type: 'type',
-    inputType: 'text'
-  });
+
 
 /*
 const searchBtn = new SearchView({
