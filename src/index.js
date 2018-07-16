@@ -1,6 +1,6 @@
 
 import './style.css';
-import View from './View.js';
+import './views/SearchView';
 
-
+document.body.innerHTML = '<div id="app" class="wrapper"></div>';
 

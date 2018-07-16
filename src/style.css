@@ -1,6 +1,5 @@
-.hello {
-  font-size: 3em;
-  color: blue;
+body {
+  margin: 0;
 }
 .menu__wrapper ul{
   list-style: none;
