@@ -1,14 +1,9 @@
 import View from '../core/View.js';
 
 export default class SearchView extends View {
-  constructor(options, additionalOptions) {
-    super(options);
-    options = Object.assign(additionalOptions, options);
-    console.log(options);
-    let {type, inputType} = options;
-    this.type = type;
-    this.inputType = inputType;
-    this.setTypeToSearch(this.type, this.inputType);
+  constructor() {
+    super({selector: '#search'});
+    console.log(this.selector);
     this.init();
   }
 
@@ -17,11 +12,8 @@ export default class SearchView extends View {
   }
 
   render() {
-    document.querySelector(this.selector).appendChild(this._createElement(this.idName, this.className, this.tagName));
-  }
-
-  setTypeToSearch(prop, value) {
-    this.element.setAttribute(prop, value);
+    this.element.innerHTML = `<input id="searchInput" class="search__input" type="text"/>
+                              <input id="searchInput" class="search__btn" type="button" value="search"/>`;
   }
 }
 

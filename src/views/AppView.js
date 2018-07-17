@@ -1,5 +1,8 @@
 import View from '../core/View.js';
 import SearchView from './SearchView';
+import ListView from './ListView';
+import MainView from './MainView';
+
 
 export class AppView extends View {
   constructor(){
@@ -14,20 +17,14 @@ export class AppView extends View {
 
   render(){
     this.element.innerHTML = `
-      <div id="search" class="search">search</div>
+      <div id="search" class="search"></div>
       <div id="list" class="list">list</div>
       <div id="main" class="main">main</div>
     `;
-    /*const search = new SearchView({
-        selector: '#app',
-        tagName: 'input',
-        idName: 'search',
-        className: 'search__input'
-      },
-      {
-        type: 'type',
-        inputType: 'text'
-      });*/
+
+    new SearchView();
+    new ListView();
+    new MainView();
   }
 
 }

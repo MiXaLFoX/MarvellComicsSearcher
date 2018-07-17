@@ -2,14 +2,15 @@ body {
   margin: 0;
 }
 .wrapper{
-  font-size: 3em;
   text-align: center;
+  font-size: 1.5em;
   display: grid;
   grid-template-areas: "search search search search"
                        "list main main main"
 }
 .search{
   background-color: #3c78a5;
+  font-size: 1.5em;
 }
 .list{
   background-color: #0d1529;
@@ -26,4 +27,29 @@ body {
 }
 .wrapper > .main{
   grid-area: main;
+}
+.search__input{
+  width: 70%;
+  border: 2px solid rgba(135, 148, 255, 0.5);
+  border-radius: 5px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+}
+.search__btn{
+  background-color: #cb2d3e;
+  color: #fffff9;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 3px 8px;
+  margin: 10px 0;
+}
+.comics__list{
+  margin: 5px 10px;
+  padding: 5px;
+  list-style: none;
+}
+.main__section{
+  padding: 3%;
 }

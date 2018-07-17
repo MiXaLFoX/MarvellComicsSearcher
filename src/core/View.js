@@ -5,7 +5,7 @@ export default class View {
     this.tagName = tagName;
     this.idName = idName;
     this.className = className;
-    this.element = this.selector ? this._getElementBySelector() : this._createElement(this.idName, this.className, this.tagName)
+    this.element = this.selector ? this._getElementBySelector(this.selector) : this._createElement(this.idName, this.className, this.tagName)
   }
 
   init() {
@@ -31,8 +31,8 @@ export default class View {
     }
   }
 
-  _getElementBySelector() {
-    return document.querySelector(this.selector);
+  _getElementBySelector(selector) {
+    return document.querySelector(selector);
   }
 }
 
