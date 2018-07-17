@@ -19,7 +19,7 @@ export default class SearchView extends View {
   }
 
   render() {
-    document.querySelector(this.selector).appendChild(this.element);
+    document.querySelector(this.selector).appendChild(this._createElement(this.idName, this.className, this.tagName));
   }
 
   setTypeToSearch(prop, value) {

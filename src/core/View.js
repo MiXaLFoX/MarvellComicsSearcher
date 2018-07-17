@@ -5,7 +5,7 @@ export default class View {
     this.tagName = tagName;
     this.idName = idName;
     this.className = className;
-    this.element =  this._createElement(this.idName, this.className, this.tagName);
+    this.element = this.selector ? this._getElementBySelector() : this._createElement(this.idName, this.className, this.tagName)
   }
 
   init() {
@@ -26,20 +26,9 @@ export default class View {
     element.id = id;
     element.classList.add(className);
   }
-}
 
-/*class AppView extends View {
-  constructor (options) {
-    super (options);
+  _getElementBySelector() {
+    return document.querySelector(this.selector);
   }
-
 }
-
-
-const wrapper = new AppView({
-  selector: 'body',
-  tagName: 'div',
-  idName: 'app',
-  className: 'wrapper'
-});*/
 

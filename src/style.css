@@ -15,4 +15,5 @@ body {
 }
 .search__input{
   width: 70%;
+  border-radius: 5px;
 }
