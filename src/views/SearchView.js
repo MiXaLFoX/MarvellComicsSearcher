@@ -8,8 +8,6 @@ export default class SearchView extends View {
     let {type, inputType} = options;
     this.type = type;
     this.inputType = inputType;
-/*    this.value = value;
-    this.inner = inner;*/
     this.setTypeToSearch(this.type, this.inputType);
     this.init();
   }

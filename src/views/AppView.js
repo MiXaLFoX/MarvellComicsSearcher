@@ -2,8 +2,9 @@ import View from '../core/View.js';
 import SearchView from './SearchView';
 
 export class AppView extends View {
-  constructor(options){
-    super(options);
+  constructor(){
+    super({selector: '#app'});
+    console.log(this.selector);
     this.init();
   }
 
@@ -12,7 +13,12 @@ export class AppView extends View {
   }
 
   render(){
-    const search = new SearchView({
+    this.element.innerHTML = `
+      <div id="search" class="search">search</div>
+      <div id="list" class="list">list</div>
+      <div id="main" class="main">main</div>
+    `;
+    /*const search = new SearchView({
         selector: '#app',
         tagName: 'input',
         idName: 'search',
@@ -21,7 +27,7 @@ export class AppView extends View {
       {
         type: 'type',
         inputType: 'text'
-      });
+      });*/
   }
 
 }

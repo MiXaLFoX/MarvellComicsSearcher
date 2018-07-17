@@ -1,19 +1,29 @@
 body {
   margin: 0;
 }
-.menu__wrapper ul{
-  list-style: none;
-
-}
 .wrapper{
-  width: 100%;
-  font-size: 1em;
-  background-color: #255C95;
+  font-size: 3em;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  display: grid;
+  grid-template-areas: "search search search search"
+                       "list main main main"
 }
-.search__input{
-  width: 70%;
-  border-radius: 5px;
+.search{
+  background-color: #3c78a5;
+}
+.list{
+  background-color: #0d1529;
+}
+.main{
+  background-color: #cbdcc8;
+}
+.wrapper > .search{
+  grid-area: search;
+}
+.wrapper > .list{
+  grid-area: list;
+  color: #fffefb;
+}
+.wrapper > .main{
+  grid-area: main;
 }
