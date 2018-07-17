@@ -23,8 +23,12 @@ export default class View {
   }
 
   _addAttrsToELement(element, id, className) {
-    element.id = id;
-    element.classList.add(className);
+    if(id) {
+      element.id = id;
+    }
+    if(className) {
+      element.classList.add(className);
+    }
   }
 
   _getElementBySelector() {
