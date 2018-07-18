@@ -25,22 +25,25 @@ export default class SearchView extends View {
   }
 
   addFetchLogic() {
-    var self = this;
     this.searchBtn.addEventListener('click', () => {
       fetch(this.getFetchUrl(this.searchBar.value))
-        .then(function (response) {
+        .then((response) => {
           return response.json()
         })
-        .then(function (resp) {
-          self.listObject.setContent(resp.data);
-          // console.log('data', data)
-        })
-        .catch(function (error) {
-          self.listObject.setContent(error);
-          // console.log('error', error)
-        })
+        .then((resp) => {
+          const results = resp.data.results;
+          console.log("response: ", results);
+          const titles = results.map(item => item.title);
+          const images = results.map(item => item.images);
+          console.log(images);
 
-      // app.list
+
+          this.listObject.render(titles);
+
+        })
+        .catch((error) => {
+          console.log('error', error)
+        })
     });
   }
 

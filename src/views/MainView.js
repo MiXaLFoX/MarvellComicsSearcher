@@ -3,7 +3,6 @@ import View from '../core/View.js';
 export default class MainView extends View {
   constructor() {
     super({selector: '#main'});
-    console.log(this.selector);
     this.init();
   }
 

@@ -5,12 +5,8 @@ import MainView from './MainView';
 
 
 export class AppView extends View {
-
-  // public search;
-
   constructor(){
     super({selector: '#app'});
-    console.log(this.selector);
     this.init();
   }
 
@@ -21,9 +17,10 @@ export class AppView extends View {
   render(){
     this.element.innerHTML = `
       <div id="search" class="search"></div>
-      <div id="list" class="list">list</div>
-      <div id="main" class="main">main</div>
+      <div id="list" class="list"></div>
+      <div id="main" class="main"></div>
     `;
+
 
     this.list = new ListView();
     this.search = new SearchView(this.list);
