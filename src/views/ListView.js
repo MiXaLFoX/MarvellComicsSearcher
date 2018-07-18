@@ -11,6 +11,11 @@ export default class SearchView extends View {
     this.render();
   }
 
+  setContent(json) {
+    console.log('json', json);
+    this.element.innerHTML = json.toString();
+  }
+
   render() {
     this.element.innerHTML = `<ul id="comlcList" class="comics__list">
                                 <li>Lorem ipsum dolor sit amet</li>

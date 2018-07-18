@@ -5,6 +5,9 @@ import MainView from './MainView';
 
 
 export class AppView extends View {
+
+  // public search;
+
   constructor(){
     super({selector: '#app'});
     console.log(this.selector);
@@ -22,8 +25,8 @@ export class AppView extends View {
       <div id="main" class="main">main</div>
     `;
 
-    new SearchView();
-    new ListView();
+    this.list = new ListView();
+    this.search = new SearchView(this.list);
     new MainView();
   }
 
