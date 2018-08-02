@@ -1,5 +1,7 @@
 import View from '../core/View.js';
-import SearchView from './SearchView';
+import {EventEmitter} from '../core/EventEmitter.js';
+
+import {SearchView} from './SearchView';
 import ListView from './ListView';
 import MainView from './MainView';
 
@@ -7,6 +9,7 @@ import MainView from './MainView';
 export class AppView extends View {
   constructor(){
     super({selector: '#app'});
+    this.ee = new EventEmitter();
     this.init();
   }
 
@@ -22,9 +25,11 @@ export class AppView extends View {
     `;
 
 
-    this.list = new ListView();
-    this.search = new SearchView(this.list);
-    new MainView();
+    this.list = new ListView(this.ee);
+    this.search = new SearchView(this.ee);
+    this.searchBar = document.querySelector('#searchInput');
+    this.searchBtn = document.querySelector('#searchBtn');
+    new MainView(this.ee);
   }
 
 }

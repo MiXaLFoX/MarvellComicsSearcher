@@ -1,8 +1,9 @@
 import View from '../core/View.js';
 
 export default class MainView extends View {
-  constructor() {
+  constructor(ee) {
     super({selector: '#main'});
+    ee.on('fetch-data', this.render.bind(this));
     this.init();
   }
 
@@ -17,4 +18,5 @@ export default class MainView extends View {
                                 magnam maiores nam omnis, voluptate. Asperiores laboriosam nihil officia quo vel.
                               </div>`;
   }
+
 }
